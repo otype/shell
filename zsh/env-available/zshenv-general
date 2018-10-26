@@ -5,11 +5,11 @@
 #
 
 # History settings
-export HISTFILESIZE=10000
-export HISTSIZE=20000
-export SAVEHIST=20000
+export HISTFILESIZE=50000
+export HISTSIZE=30000
+export SAVEHIST=30000
 export HISTFILE=~/.zsh_history
-export KEYTIMEOUT=1							# reduce vi-mode lag of 0.4 second delay to 0.1
+export KEYTIMEOUT=1			# reduce vi-mode lag of 0.4 second delay to 0.1
 
 # Calculator should use higher precision (no rounding)
 alias bc="bc -l"

@@ -1,9 +1,9 @@
 #!/usr/local/bin/zsh
 
-# ANDROID SDK
+# ZHENV ANDROID SDK
 #
 #
-if [[ -d /usr/local/Cellar/android-sdk ]]; then
+if [[ -d "/usr/local/Cellar/android-sdk" ]]; then
 	ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/`ls /usr/local/Cellar/android-sdk`
 	export ANDROID_SDK_ROOT
         ANDROID_HOME=$ANDROID_SDK_ROOT

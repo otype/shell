@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-# ASDF
+# ZSHENV ASDF
 #
 #
 [[ -d "/usr/local/opt/asdf" ]] && source /usr/local/opt/asdf/asdf.sh

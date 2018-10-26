@@ -1,12 +1,19 @@
 #!/usr/local/bin/zsh
 
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+# ZSHENV GOENV
+#
+#
 
-# We simply put GOPATH to $HOME ... this will create:
-#   - ~/src (exists anyway),
-#   - ~/pkg and
-#   - ~/bin (which actually already is part of env PATH).
-export GOPATH=$HOME
-export PATH="$GOPATH/bin:$PATH"
+# This requires goenv (https://github.com/syndbg/goenv) to be installed.
+if [[ -f "/usr/local/bin/goenv" ]];then
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
+    eval "$(goenv init -)"
+
+    # We simply put GOPATH to $HOME ... this will create:
+    #   - ~/src (exists anyway),
+    #   - ~/pkg and
+    #   - ~/bin (which actually already is part of env PATH).
+    export GOPATH=$HOME
+    export PATH="$GOPATH/bin:$PATH"
+fi
