@@ -1,8 +1,10 @@
 #!/usr/local/bin/zsh
 
-# DRONE
+# ZSHENV DRONE
 #
 #
-if [[ -f /usr/local/bin/drone ]]; then
+
+# This should point to your drone token configuration (see https://drone.meltwater.io/account/token)
+if [[ -f "/usr/local/bin/drone" ]]; then
     . ~/.dotfiles-private/drone/drone.meltwater.io
 fi
