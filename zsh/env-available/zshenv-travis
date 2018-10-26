@@ -4,5 +4,5 @@
 #
 #
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+# Requires travis-cli to be installed
+[[ -f "$HOME/.travis/travis.sh" ]] && source ~/.travis/travis.sh

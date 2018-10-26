@@ -6,7 +6,7 @@
 
 # Following is provided via hub (https://github.com/github/hub) and
 # wraps git automatically.
-eval "$(hub alias -s)"
+[[ -f `which hub` ]] && eval "$(hub alias -s)"
 
 # Aliases
 alias gpr="git pull --rebase -v"

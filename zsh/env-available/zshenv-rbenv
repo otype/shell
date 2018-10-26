@@ -1,21 +1,19 @@
 #!/usr/local/bin/zsh
 
-# RBENV
+# ZSHENV RBENV
 #
 #
-if [[ `uname -s` = "FreeBSD" ]]; then
-    # do nothing, we are done
-elif [[ `uname -s` = "Darwin" ]]; then
-	# Most likely, you are on a Mac!
-	export RBENV_ROOT=/usr/local/var/rbenv
-	if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-	rbenv rehash
 
-	# If you use "gem install --user <gem_name>" with the "system"-ruby version ...
-	[[ -d "$HOME/.gem/ruby/2.0.0/bin" ]] && export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-else
-	echo "`uname -s` is not supported!"
+# Requires rbenv to be installed
+if [[ -d "/usr/local/var/rbenv" ]]; then
+    export RBENV_ROOT=/usr/local/var/rbenv
+    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+    rbenv rehash
+
 fi
+
+# If you use "gem install --user <gem_name>" with the "system"-ruby version ...
+[[ -d "$HOME/.gem/ruby/2.0.0/bin" ]] && export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 
 # Aliases
 alias be="bundle exec"

@@ -1,9 +1,12 @@
 #!/usr/local/bin/zsh
 
-# Markdown ENV
+# ZSHENV Markdown
 #
 #
 
+# This requires following:
+# - pandoc
+# - lynx
 function mdv() {
 	`which pandoc` $1 | `which lynx` -stdin
 }

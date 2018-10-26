@@ -3,4 +3,4 @@
 # PYTHON
 #
 #
-[[ -d /usr/local/share/python ]] && export PATH=/usr/local/share/python:$PATH
+[[ -d "/usr/local/share/python" ]] && export PATH=/usr/local/share/python:$PATH
