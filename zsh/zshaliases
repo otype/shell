@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# ZSH-ALIASES
+#
+# Only add high-level aliases here. Otherwise, create a new environment
+# file in ./env-available/zshenv-<your_new_env> and link it in
+# ./env-enabled/zshenv-<your_new_env>.
+

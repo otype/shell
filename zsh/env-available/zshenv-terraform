@@ -1,0 +1,15 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV TERRAFORM
+#
+#
+
+# Source chtf
+if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
+    source "/usr/local/share/chtf/chtf.sh"
+
+    # Activate Terraform
+    TERRAFORM_VERSION="0.11.8"
+    export TERRAFORM_VERSION
+    chtf $TERRAFORM_VERSION
+fi
