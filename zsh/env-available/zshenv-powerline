@@ -1,0 +1,8 @@
+#!/usr/local/bin/zsh
+
+# Powerline ENV
+#
+#
+
+# Run powerline-daemon
+[[ -f `which powerline-daemon` ]] && powerline-daemon -q

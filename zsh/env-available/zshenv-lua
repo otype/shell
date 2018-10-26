@@ -1,0 +1,12 @@
+#!/usr/local/bin/zsh
+
+# LUA
+#
+#
+if [[ `uname -s` = "FreeBSD" ]]; then
+  # do nothing, we are done
+elif [[ `uname -s` = "Darwin" ]]; then
+	[[ -d "$HOME/.luarocks/bin" ]] && export PATH="$HOME/.luarocks/bin:$PATH"
+else
+	echo "`uname -s` is not supported!"
+fi

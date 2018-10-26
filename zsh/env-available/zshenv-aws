@@ -1,0 +1,11 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV AWS
+#
+#
+
+function aig() {
+  PARAMS=$*
+  EGREP_PARAMS=$(echo $PARAMS | sed 's/ /|/g')
+  aws-instances | egrep "($EGREP_PARAMS)"
+}

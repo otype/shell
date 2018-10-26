@@ -1,0 +1,16 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV Emacs
+#
+#
+
+# The emacs daemon can be started automatically in a very simple manner:
+# When you invoke emacsclient -t/-c the server will be started (with emacs --daemon) if it's not already running.
+export ALTERNATE_EDITOR=""
+
+# Set emacsclient as default editor
+export EDITOR="/usr/local/bin/emacsclient"
+
+# Aliases
+alias e="/usr/local/bin/emacsclient -t"
+alias ec="/usr/local/bin/emacsclient -c"

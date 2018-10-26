@@ -1,0 +1,45 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV General
+#
+#
+
+# History settings
+export HISTFILESIZE=10000
+export HISTSIZE=20000
+export SAVEHIST=20000
+export HISTFILE=~/.zsh_history
+export KEYTIMEOUT=1							# reduce vi-mode lag of 0.4 second delay to 0.1
+
+# Calculator should use higher precision (no rounding)
+alias bc="bc -l"
+
+# General exports
+export PAGER="less"
+
+# Preferred editor: emacsclient if available (this will be set in zshenv-emacs), otherwise vim.
+[[ -f `which emacsclient` ]] || export EDITOR="vim"
+
+# Lang variables
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+# prevent emacs term-mode to print "4m" at the end of each command
+if [[ `uname -s` = "Darwin" ]]; then
+    export TERM=xterm-256color
+fi
+
+# Add ~/bin to our PATH
+[[ -d "$HOME/bin" ]] && export PATH=$PATH:$HOME/bin
+
+# Add /opt/local/bin
+[[ -d "/opt/local/bin" ]] && export PATH=$PATH:/opt/local/bin
+
+# General
+alias h=history
+alias sl=ls
+
+# VI
+alias vi=vim

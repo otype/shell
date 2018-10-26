@@ -1,0 +1,8 @@
+#!/usr/local/bin/zsh
+
+# DRONE
+#
+#
+if [[ -f /usr/local/bin/drone ]]; then
+    . ~/.dotfiles-private/drone/drone.meltwater.io
+fi

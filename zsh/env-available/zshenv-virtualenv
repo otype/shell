@@ -1,0 +1,13 @@
+#!/usr/local/bin/zsh
+
+# PYTHON VIRTUALENV
+#
+#
+if [[ -d $HOME/Configurations/virtualenvs ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+    export WORKON_HOME=$HOME/Configurations/virtualenvs
+
+    if [[ -d /usr/local/share/python/virtualenvwrapper.sh ]]; then
+        source /usr/local/share/python/virtualenvwrapper.sh
+    fi
+fi

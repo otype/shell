@@ -1,0 +1,6 @@
+#!/usr/local/bin/zsh
+
+# PYTHON
+#
+#
+[[ -d /usr/local/share/python ]] && export PATH=/usr/local/share/python:$PATH

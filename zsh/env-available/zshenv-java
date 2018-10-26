@@ -1,0 +1,142 @@
+#!/usr/local/bin/zsh
+
+# JAVA
+#
+#
+
+# Print out all Java processes
+function pj() {
+  ps aux | grep "$JAVA_HOME" | grep -v "grep" | awk '{print $2, $11, $(NF)}'
+}
+
+# Kill all Java processes
+function pjk() {
+  for pid in `pj | awk '{print $1}'`
+  do
+    echo ">>> Killing [$pid]"
+    kill -9 $pid
+  done
+}
+
+# Kill all gradle initiated Java processes
+function pjgk() {
+  for pid in `pj | grep "com.meltwater.ids" | awk '{print $1}'`
+  do
+    echo ">>> Killing [$pid]"
+    kill -9 $pid
+  done
+}
+
+# Maven settings
+# Using maven2? Then, use M2_HOME! If you have maven3 DO NOT USE M2_HOME!
+function set-maven-opts() {
+  [[ "$JAVA_HOME" != "$JDK8" ]] && MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
+
+  export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless='true' ${MAVEN_EXTRA_OPTS}"
+}
+set-maven-opts
+
+function java-versions() {
+	env | grep JDK
+}
+
+function show-java-versions() {
+	if [[ "`uname -s`" == "FreeBSD" ]]; then
+		# do nothing
+	elif [[ `uname -s` = "Linux" ]]; then
+		# do nothing
+	elif [[ `uname -s` = "OpenBSD" ]]; then
+		ls -d /usr/local/jdk* | sed 's#/usr/local/jdk-##g'
+	else
+		ls /Library/Java/JavaVirtualMachines
+	fi
+}
+
+function switch-to-java() {
+  jdk=$1
+
+  if [[ "$jdk" == "1.7" ]]; then
+    JAVA_HOME=$JDK7
+  elif [[ "$jdk" == "7" ]]; then
+    JAVA_HOME=$JDK7
+  elif [[ "$jdk" == "1.8" ]]; then
+    JAVA_HOME=$JDK8
+  elif [[ "$jdk" == "8" ]]; then
+    JAVA_HOME=$JDK8
+  elif [[ "$jdk" == "9" ]]; then
+    JAVA_HOME=$JDK9
+  else
+    JAVA_HOME=`/usr/libexec/java_home -v $jdk`
+  fi
+
+  export JAVA_HOME
+  echo "Switching to $JAVA_HOME"
+  set-maven-opts
+  echo "Setting MAVEN_OPTS=$MAVEN_OPTS"
+}
+
+# Fix IntelliJ 12+ vmoptions when upgrading
+# See more details here:
+# http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
+# http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
+function fix-intellij-vmoptions() {
+	if [[ "`uname -s`" == "FreeBSD" ]]; then
+		echo "No config, yet! Exiting now!"
+		exit 1
+	elif [[ `uname -s` = "Linux" ]]; then
+		echo "No config, yet! Exiting now!"
+		exit 1
+	else
+		intellij_pref_path="${HOME}/Library/Preferences/IntelliJIdea2016.1"
+	fi
+
+	idea_vmoptions_file="${intellij_pref_path}/idea.vmoptions"
+
+	mkdir -p $intellij_pref_path
+	echo "[Writing new configuration]"
+	cat << EOF > ${idea_vmoptions_file}
+-Xms256m
+-Xmx2048m
+-XX:MaxPermSize=512m
+-XX:ReservedCodeCacheSize=300m
+-XX:+UseCompressedOops
+-XX:+UseCodeCacheFlushing
+EOF
+	echo ""
+	echo "Following file was written:"
+	echo "${idea_vmoptions_file}"
+	echo ""
+	cat $idea_vmoptions_file
+
+    echo ""
+    echo "Done. Restart IntelliJ for changes to take effect."
+    return 0
+}
+
+# JDKs
+#
+#
+if [[ `uname -s` = "FreeBSD" ]]; then
+    JDK7="/usr/local/openjdk7"
+    JDK8="/usr/local/openjdk8"
+    defaultJDK=$JDK8
+elif [[ `uname -s` = "Linux" ]]; then
+		JDK7="/usr/java/jdk1.7.0_79"
+		JDK8="/usr/java/jdk1.8.0_71"
+		defaultJDK=$JDK8
+elif [[ `uname -s` = "OpenBSD" ]]; then
+		JDK7="/usr/local/jdk-1.7.0"
+		JDK8="/usr/local/jdk-1.8.0"
+		defaultJDK=$JDK8
+else
+    # JDK7=`/usr/libexec/java_home -v 1.7`
+    JDK8=`/usr/libexec/java_home -v 1.8`
+    JDK9=`/usr/libexec/java_home -v 9`
+    defaultJDK=$JDK8
+fi
+# export JDK7
+export JDK8
+export JDK9
+export JAVA_HOME="${defaultJDK}"
+export JRE_HOME="${defaultJDK}/jre"
+
