@@ -1,0 +1,63 @@
+#!/usr/local/bin/zsh
+
+# Util functions to enable/disable other zsh scripts
+
+if [ "$SHELL" = "/usr/local/bin/zsh" ]; then
+	export ZSH_ROOT=~/.zsh
+	export AVAILABLE="$ZSH_ROOT/env-available"
+	export ENABLED="$ZSH_ROOT/env-enabled"
+fi
+
+# Enables a given zsh script: Requires the exact name of the script without the 'zshenv-' prefix
+# Example: enable riak
+function enable() {
+	if [ -z "$1" ]; then
+		echo "\n>>> enable requires 1 parameter: Name of the zsh to enable"
+		return 1
+	fi
+
+	if [[ -f "$ENABLED/zshenv-$1" ]]; then
+		echo "\n>>> $1 is already enabled"
+		return 1
+	fi
+
+    	if [[ -f "$AVAILABLE/zshenv-$1" ]]; then
+        	cd $ENABLED
+		ln -nsf $AVAILABLE/zshenv-$1
+		echo "\n>>>$1 enabled"
+    	else
+        	echo "\n>>> $1 not found in $AVAILABLE!"
+        	return 1
+    	fi
+}
+
+# Disables a given zsh script: Requires the exact name of the script without the 'zshenv-' prefix
+# Example: disable riak
+function disable() {
+	if [ -z "$1" ]; then
+                echo "\n>>> disable requires 1 parameter: Name of the zsh to enable"
+                return 1
+        fi
+	if [[ -f "$ENABLED/zshenv-$1" ]]; then
+		cd $ENABLED
+		rm "zshenv-$1"
+    		echo "\n>>> $1 disabled"
+    else
+		echo "\n>>> $1 is already disabled"
+		return 1
+	fi
+}
+
+function listEnabled() {
+	ls -1t $ENABLED|sed 's/zshenv-//'
+}
+
+function listAvailable() {
+   for a in $(ls -1t $AVAILABLE|sed 's/zshenv-//'); do
+        if [[ -f "$ENABLED/zshenv-$a" ]]; then
+                echo $(tput setaf 2)$a
+        else
+                echo $(tput setaf 3)$a
+        fi
+  done
+}
