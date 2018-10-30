@@ -8,7 +8,7 @@ if [ "$SHELL" = "/usr/local/bin/zsh" ]; then
 	export ENABLED="$ZSH_ROOT/env-enabled"
 fi
 
-#Enables a given zsh script: Requires the exact name of the script without the 'zshenv-' prefix
+# Enables a given zsh script: Requires the exact name of the script without the 'zshenv-' prefix
 # Example: enable riak
 function enable() {
 	if [ -z "$1" ]; then
@@ -42,7 +42,7 @@ function disable() {
 		cd $ENABLED
 		rm "zshenv-$1"
     		echo "\n>>> $1 disabled"
-      	else
+    else
 		echo "\n>>> $1 is already disabled"
 		return 1
 	fi
