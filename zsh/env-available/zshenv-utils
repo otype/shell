@@ -49,7 +49,7 @@ function disable() {
 }
 
 function listEnabled() {
-	ls -1t  $ENABLED
+	ls -1t $ENABLED|sed 's/zshenv-//'
 }
 
 function listAvailable() {
