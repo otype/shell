@@ -51,3 +51,7 @@ function disable() {
 function listEnabled() {
 	ls -1t  $ENABLED
 }
+
+function listAvailable() {
+	ls -1t  $AVAILABLE
+}
