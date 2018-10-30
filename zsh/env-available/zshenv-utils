@@ -53,5 +53,5 @@ function listEnabled() {
 }
 
 function listAvailable() {
-	ls -1t  $AVAILABLE
+	ls -1t $AVAILABLE|sed 's/zshenv-//'
 }
