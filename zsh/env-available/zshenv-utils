@@ -53,5 +53,11 @@ function listEnabled() {
 }
 
 function listAvailable() {
-	ls -1t $AVAILABLE|sed 's/zshenv-//'
+   for a in $(ls -1t $AVAILABLE|sed 's/zshenv-//'); do
+        if [[ -f "$ENABLED/zshenv-$a" ]]; then
+                echo $(tput setaf 2)$a
+        else
+                echo $(tput setaf 3)$a
+        fi
+  done
 }
