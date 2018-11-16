@@ -2,11 +2,13 @@
 
 if [[ -d "/usr/local/Cellar/go" ]]; then
     export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
-    export PATH="$PATH:$GOROOT/bin"
 elif [[ -d "/usr/local/opt/go@1.10/libexec/bin" ]]; then
     export GOROOT="/usr/local/opt/go@1.10/libexec"
-    export PATH="$PATH:$GOROOT/bin"
+elif [[ -d "/usr/local/opt/go@1.11/libexec/bin" ]]; then
+    export GOROOT="/usr/local/opt/go@1.11/libexec"
 fi
+
+export PATH="$PATH:$GOROOT/bin"
 
 # We simply put GOPATH to $HOME ... this will create:
 #   - ~/src (exists anyway),
