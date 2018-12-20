@@ -9,7 +9,7 @@ if [[ -f "/usr/local/share/chtf/chtf.sh" ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 
     # Activate Terraform
-    TERRAFORM_VERSION="0.11.10"
+    TERRAFORM_VERSION="0.11.11"
     export TERRAFORM_VERSION
     chtf $TERRAFORM_VERSION
 fi
