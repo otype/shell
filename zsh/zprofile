@@ -4,7 +4,6 @@
 #
 # If configured it will use gpg-agent as SSH agent (for smart keys)
 #
-# If file ~/.disable_gnupg exists do not load this configuration!
 if [[ -f "$HOME/.gnupg/gpg-agent.conf" ]]; then
     cat $HOME/.gnupg/gpg-agent.conf | grep enable-ssh-support > /dev/null
     ssh_support_enabled=$?
