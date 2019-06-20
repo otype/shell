@@ -8,6 +8,9 @@ elif [[ -d "/usr/local/opt/go@1.11/libexec/bin" ]]; then
     export GOROOT="/usr/local/opt/go@1.11/libexec"
 fi
 
+# Enable Go111
+export GO111MODULE=on
+
 export PATH="$PATH:$GOROOT/bin"
 
 # We simply put GOPATH to $HOME ... this will create:
