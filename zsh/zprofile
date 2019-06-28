@@ -4,7 +4,7 @@
 #
 # If configured it will use gpg-agent as SSH agent (for smart keys)
 #
-if [[ -f "$HOME/.gnupg/gpg-agent.conf" -a -f "$HOME/.enable_gpg_for_ssh" ]]; then
+if [[ -f "$HOME/.gnupg/gpg-agent.conf" ]] && [[ -f "$HOME/.enable_gpg_for_ssh" ]]; then
     cat $HOME/.gnupg/gpg-agent.conf | grep enable-ssh-support > /dev/null
     ssh_support_enabled=$?
 
