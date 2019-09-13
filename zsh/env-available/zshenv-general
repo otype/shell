@@ -42,7 +42,11 @@ alias sl=ls
 alias bc="bc -l"
 
 # Quickly open current project in drone
-alias dr="open https://drone.REDACTED.io/REDACTED/$(basename `pwd`)"
+function dr() {
+    CWD=`pwd`
+    BASENAME=`basename $CWD`
+    open https://drone.REDACTED.io/REDACTED/$BASENAME
+}
 
 # VI
 alias vi=vim
