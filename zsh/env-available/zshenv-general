@@ -42,7 +42,11 @@ alias sl=ls
 alias bc="bc -l"
 
 # Quickly open current project in drone
-alias dr="open https://drone.meltwater.io/meltwater/$(basename `pwd`)"
+function dr() {
+    CWD=`pwd`
+    BASENAME=`basename $CWD`
+    open https://drone.meltwater.io/meltwater/$BASENAME
+}
 
 # VI
 alias vi=vim
