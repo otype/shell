@@ -5,9 +5,9 @@
 #
 
 # History settings
-export HISTFILESIZE=50000
-export HISTSIZE=30000
-export SAVEHIST=30000
+export HISTFILESIZE=100000
+export HISTSIZE=50000
+export SAVEHIST=50000
 export HISTFILE=~/.zsh_history
 export KEYTIMEOUT=1			# reduce vi-mode lag of 0.4 second delay to 0.1
 
@@ -40,13 +40,6 @@ alias sl=ls
 
 # Calculator should use higher precision (no rounding)
 alias bc="bc -l"
-
-# Quickly open current project in drone
-function dr() {
-    CWD=`pwd`
-    BASENAME=`basename $CWD`
-    open https://drone.meltwater.io/meltwater/$BASENAME
-}
 
 # VI
 alias vi=vim

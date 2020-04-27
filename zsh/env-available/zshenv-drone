@@ -8,3 +8,10 @@
 if [[ -f "/usr/local/bin/drone" ]]; then
     . ~/.dotfiles-private/drone/drone.meltwater.io
 fi
+
+# Quickly open current project in drone
+function dr() {
+    CWD=`pwd`
+    BASENAME=`basename $CWD`
+    open https://drone.meltwater.io/meltwater/$BASENAME
+}

@@ -12,11 +12,3 @@
 alias gpr="git pull --rebase -v"
 alias gprf="git pull --rebase -v && git fetch --all --prune"
 alias git-last-authors='for branch in $(git branch -r | grep -v HEAD);do echo -e \[$(basename `git rev-parse --show-toplevel`)\] $branch \($(git show --format="%an | %ai %ar" $branch | head -n 1)\); done | sort -r'
-
-# Custom functions for git
-function gcsp() {
-  [[ $# -eq 0 ]] && echo 'ERROR: Missing parameters!' && return 1
-  PARAMS=$*
-  git commit -S $PARAMS
-  git push
-}
