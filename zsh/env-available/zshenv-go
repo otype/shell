@@ -1,5 +1,6 @@
 #!/usr/local/bin/zsh
 
+# Use on Mac OS X
 if [[ -d "/usr/local/Cellar/go" ]]; then
     export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
 elif [[ -d "/usr/local/opt/go@1.10/libexec/bin" ]]; then
