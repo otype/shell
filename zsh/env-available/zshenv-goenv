@@ -5,7 +5,7 @@
 #
 
 # This requires goenv (https://github.com/syndbg/goenv) to be installed.
-if [[ -f "/usr/local/bin/goenv" ]];then
+if [[ -f "/usr/local/bin/goenv" ]] || [[ -f "$HOME/.goenv/bin/goenv" ]]; then
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
