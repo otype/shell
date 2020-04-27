@@ -15,5 +15,6 @@ if [[ -f "/usr/local/bin/goenv" ]] || [[ -f "$HOME/.goenv/bin/goenv" ]]; then
     #   - ~/pkg and
     #   - ~/bin (which actually already is part of env PATH).
     export GOPATH=$HOME
-    export PATH="$GOPATH/bin:$PATH"
+    export PATH="$GOROOT/bin:$PATH"
+    export PATH="$PATH:$GOPATH/bin"
 fi
