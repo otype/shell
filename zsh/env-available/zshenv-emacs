@@ -9,8 +9,8 @@
 export ALTERNATE_EDITOR=""
 
 # Set emacsclient as default editor
-export EDITOR="/usr/local/bin/emacsclient"
+export EDITOR="`which emacsclient`"
 
 # Aliases
-alias e="/usr/local/bin/emacsclient -t"
-alias ec="/usr/local/bin/emacsclient -c"
+alias e="`which emacsclient` -t"
+alias ec="`which emacsclient` -c"
