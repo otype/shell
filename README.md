@@ -20,7 +20,7 @@ This is my rather extensive [ZSH](http://www.zsh.org/) configuration.
         $ ln -nsf ~/.shell/zsh/ ~/.zsh
         $ ln -nsf ~/.shell/zprofile ~/.zprofile
 
-3. Modify [zshrc](/otype/shell/blob/master/zsh/zshrc) and update oh-my-zsh location and theme.
+3. Modify [zshrc](/zsh/zshrc) and update oh-my-zsh location and theme.
 
 4. Enable the configuration files you need:
 
