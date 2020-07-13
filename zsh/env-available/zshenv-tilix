@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# TILIX (Pop OS/Ubuntu terminal emulator)
+#
+#
+
+# Work with Tilix (Linux/Ubuntu)
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+   source /etc/profile.d/vte.sh
+fi
