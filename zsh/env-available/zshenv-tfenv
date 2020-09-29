@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# ZSHENV TFENV
+#
+#
+
+if [[ -d "$HOME/.tfenv" ]]; then
+    export PATH="$HOME/.tfenv/bin:$PATH"
+fi
