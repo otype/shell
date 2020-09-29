@@ -3,4 +3,8 @@
 # PYTHON
 #
 #
+# For Mac OS X
 [[ -d "/usr/local/share/python" ]] && export PATH=/usr/local/share/python:$PATH
+
+# For Linux
+[[ -d "$(python -m site --user-base)/bin" ]] && export PATH="$(python -m site --user-base)/bin:$PATH"

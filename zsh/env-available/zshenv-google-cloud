@@ -8,3 +8,6 @@
 
 # The next line enables shell command completion for gcloud.
 [[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]] && source "$HOME/google-cloud-sdk/completion.zsh.inc"
+
+# Enable the Google Cloud bin directory
+[[ -f "$HOME/google-cloud-sdk/bin" ]] && export PATH=$HOME/google-cloud-sdk/bin:$PATH
