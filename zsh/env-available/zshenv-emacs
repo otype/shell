@@ -8,9 +8,12 @@
 # When you invoke emacsclient -t/-c the server will be started (with emacs --daemon) if it's not already running.
 export ALTERNATE_EDITOR=""
 
-# Set emacsclient as default editor
-export EDITOR="`which emacsclient`"
+# $EDITOR should open in terminal
+export EDITOR="emacsclient -t"
+
+# $VISUAL opens in GUI with non-daemon as alternate
+export VISUAL="emacsclient -c -a emacs"
 
 # Aliases
-alias e="`which emacsclient` -t"
-alias ec="`which emacsclient` -c"
+alias e="emacsclient -t"
+alias ec="emacsclient -c"
