@@ -8,8 +8,8 @@ if [[ -d "$HOME/.pyenv/" ]]; then
     # For Linux
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
-    # eval "$(pyenv init --path)"
 elif [[ -d "/usr/local/opt/pyenv" ]]; then
     # For Mac OS X
     export PYENV_ROOT="/usr/local/opt/pyenv"
