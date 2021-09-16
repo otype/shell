@@ -3,7 +3,9 @@
 # ZSHENV NODE/NVM
 #
 #
-[[ -d "/usr/local/share/npm/bin" ]] && export PATH=/usr/local/share/npm/bin:$PATH
+
+# Deprecated?
+#[[ -d "/usr/local/share/npm/bin" ]] && export PATH=/usr/local/share/npm/bin:$PATH
 
 # Requires nvm to be installed
 if [[ -d "$HOME/.nvm" ]]; then
