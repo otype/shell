@@ -18,52 +18,44 @@ function pjk() {
     done
 }
 
-# Kill all gradle initiated Java processes
-function pjgk() {
-    for pid in `pj | grep "com.meltwater.ids" | awk '{print $1}'`
-    do
-	      echo ">>> Killing [$pid]"
-	      kill -9 $pid
-    done
-}
-
-# Maven settings
-# Using maven2? Then, use M2_HOME! If you have maven3 DO NOT USE M2_HOME!
-# function set-maven-opts() {
-#     [[ "$JAVA_HOME" != "$JDK8" ]] && MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
-#     export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless='true' ${MAVEN_EXTRA_OPTS}"
-# }
-# set-maven-opts
-
-# function java-versions() {
-#     env | grep JDK
-# }
-
 function show-java-versions() {
-    ls /Library/Java/JavaVirtualMachines
+    update-java-alternatives -l
 }
 
 function switch-to-java() {
-    jdk=$1
-
-    if [[ "$jdk" == "1.8" ]]; then
-	      JAVA_HOME=$JDK8
-    elif [[ "$jdk" == "9" ]]; then
-	      JAVA_HOME=$JDK9
-    else
-	      JAVA_HOME=`/usr/libexec/java_home -v $jdk`
+    if [[ -z "$1" ]]; then
+        show-java-versions
+        return 1
     fi
 
-    export JAVA_HOME
-    echo "Switching to $JAVA_HOME"
-    set-maven-opts
-    echo "Setting MAVEN_OPTS=$MAVEN_OPTS"
+    jdk_version=$1
+
+    export JAVA_HOME="/usr/lib/jvm/java-${jdk_version}-openjdk-amd64"
+    sudo update-java-alternatives --config java
+    sudo update-java-alternatives --config javac
+    # echo "JAVA_HOME=\"/usr/lib/jvm/java-${jdk_version}-openjdk-amd64\"" | sudo tee -a /etc/environment
 }
+
+# function switch-to-java-on-mac() {
+#     jdk=$1
+
+#     if [[ "$jdk" == "1.8" ]]; then
+# 	      JAVA_HOME=$JDK8
+#     elif [[ "$jdk" == "9" ]]; then
+# 	      JAVA_HOME=$JDK9
+#     else
+# 	      JAVA_HOME=`/usr/libexec/java_home -v $jdk`
+#     fi
+
+#     export JAVA_HOME
+#     echo "Switching to $JAVA_HOME"
+#     # set-maven-opts
+#     # echo "Setting MAVEN_OPTS=$MAVEN_OPTS"
+# }
 
 # Fix IntelliJ 12+ vmoptions when upgrading
 # See more details here:
-# http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
-# http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544869-Configuring-JVM-options-and-platform-properties
 function fix-intellij-vmoptions() {
     if [[ "`uname -s`" == "FreeBSD" ]]; then
 	      echo "No config, yet! Exiting now!"
@@ -80,12 +72,18 @@ function fix-intellij-vmoptions() {
     mkdir -p $intellij_pref_path
     echo "[Writing new configuration]"
     cat << EOF > ${idea_vmoptions_file}
+-server
 -Xms256m
 -Xmx2048m
--XX:MaxPermSize=512m
 -XX:ReservedCodeCacheSize=300m
--XX:+UseCompressedOops
--XX:+UseCodeCacheFlushing
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-XX:MaxJavaStackTraceDepth=-1
 EOF
     echo ""
     echo "Following file was written:"
@@ -103,6 +101,7 @@ EOF
 #
 if [[ `uname -s` = "Linux" ]]; then
     # do nothing
+    export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"
 else # For Mac
     export JDK8=`/usr/libexec/java_home -v 1.8`
     export JDK9=`/usr/libexec/java_home -v 9`
