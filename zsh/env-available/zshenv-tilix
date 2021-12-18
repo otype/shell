@@ -8,3 +8,8 @@
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
    source /etc/profile.d/vte.sh
 fi
+
+# To make Tilix Profile switching possible
+if [ $TILIX_ID ]; then
+   source /usr/share/tilix/scripts/tilix_int.sh
+fi
