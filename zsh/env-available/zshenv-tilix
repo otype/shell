@@ -10,6 +10,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # To make Tilix Profile switching possible
-if [ $TILIX_ID ]; then
-   source /usr/share/tilix/scripts/tilix_int.sh
-fi
+source /usr/share/tilix/scripts/tilix_int.sh
