@@ -18,3 +18,4 @@ export VISUAL="emacsclient -c -a emacs"
 # Aliases
 alias e="emacsclient -t"
 alias ec="emacsclient -c"
+alias se="SUDO_EDITOR=\"emacsclient\" sudo -e"
