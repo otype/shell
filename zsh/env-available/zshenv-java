@@ -19,82 +19,24 @@ function pjk() {
 }
 
 function show-java-versions() {
-    update-java-alternatives -l
+    update-alternatives --list | grep jdk
 }
 
 function switch-to-java() {
-    if [[ -z "$1" ]]; then
-        show-java-versions
-        return 1
-    fi
+    sudo update-alternatives --config java_sdk_openjdk
+    sudo update-alternatives --config java
+    sudo update-alternatives --config javac
 
-    jdk_version=$1
+    echo "\n>>> java -version"
+    java -version
 
-    export JAVA_HOME="/usr/lib/jvm/java-${jdk_version}-openjdk-amd64"
-    sudo update-java-alternatives --config java
-    sudo update-java-alternatives --config javac
-    # echo "JAVA_HOME=\"/usr/lib/jvm/java-${jdk_version}-openjdk-amd64\"" | sudo tee -a /etc/environment
+    echo "\n>>> javac -version"
+    javac -version
+
+    echo "\n>>> mvn -version"
+    mvn -version
 }
 
-# function switch-to-java-on-mac() {
-#     jdk=$1
-
-#     if [[ "$jdk" == "1.8" ]]; then
-# 	      JAVA_HOME=$JDK8
-#     elif [[ "$jdk" == "9" ]]; then
-# 	      JAVA_HOME=$JDK9
-#     else
-# 	      JAVA_HOME=`/usr/libexec/java_home -v $jdk`
-#     fi
-
-#     export JAVA_HOME
-#     echo "Switching to $JAVA_HOME"
-#     # set-maven-opts
-#     # echo "Setting MAVEN_OPTS=$MAVEN_OPTS"
-# }
-
-# Fix IntelliJ 12+ vmoptions when upgrading
-# See more details here:
-# https://intellij-support.jetbrains.com/hc/en-us/articles/206544869-Configuring-JVM-options-and-platform-properties
-function fix-intellij-vmoptions() {
-    if [[ "`uname -s`" == "FreeBSD" ]]; then
-	      echo "No config, yet! Exiting now!"
-	      exit 1
-    elif [[ `uname -s` = "Linux" ]]; then
-	      echo "No config, yet! Exiting now!"
-	      exit 1
-    else
-	      intellij_pref_path="${HOME}/Library/Preferences/IntelliJIdea2016.1"
-    fi
-
-    idea_vmoptions_file="${intellij_pref_path}/idea.vmoptions"
-
-    mkdir -p $intellij_pref_path
-    echo "[Writing new configuration]"
-    cat << EOF > ${idea_vmoptions_file}
--server
--Xms256m
--Xmx2048m
--XX:ReservedCodeCacheSize=300m
--XX:+UseConcMarkSweepGC
--XX:SoftRefLRUPolicyMSPerMB=50
--ea
--Dsun.io.useCanonCaches=false
--Djava.net.preferIPv4Stack=true
--XX:+HeapDumpOnOutOfMemoryError
--XX:-OmitStackTraceInFastThrow
--XX:MaxJavaStackTraceDepth=-1
-EOF
-    echo ""
-    echo "Following file was written:"
-    echo "${idea_vmoptions_file}"
-    echo ""
-    cat $idea_vmoptions_file
-
-    echo ""
-    echo "Done. Restart IntelliJ for changes to take effect."
-    return 0
-}
 
 # JDKs
 #
@@ -104,7 +46,6 @@ if [[ `uname -s` = "Linux" ]]; then
     export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"
 else # For Mac
     export JDK8=`/usr/libexec/java_home -v 1.8`
-    export JDK9=`/usr/libexec/java_home -v 9`
     defaultJDK=$JDK8
     export JAVA_HOME="${defaultJDK}"
     export JRE_HOME="${defaultJDK}/jre"
