@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-
-# ZSHENV TRAVIS
-#
-#
-
-# Requires travis-cli to be installed
-[[ -f "$HOME/.travis/travis.sh" ]] && source ~/.travis/travis.sh
