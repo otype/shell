@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-# OPSGENIE
-#
-#
-
-if [[ -f "$HOME/bin/opsgenie-lamp" ]] || [[ -f "$HOME/bin/lamp" ]]; then
-    alias alerts='opsgenie-lamp listAlerts --config $HOME/.lamp.conf --query "teams: blacksmiths status: open" --pretty --output-format yaml'
-fi
