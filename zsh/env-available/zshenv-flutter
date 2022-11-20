@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+# ZHENV FLUTTER
+#
+#
+export PATH="$PATH:$HOME/Development/flutter/bin"
