@@ -4,11 +4,6 @@
 #
 #
 
-# Following is provided via hub (https://github.com/github/hub) and
-# wraps git automatically.
-[[ -f `which hub` ]] && eval "$(hub alias -s)"
-
 # Aliases
 alias gpr="git pull --rebase -v"
 alias gprf="git pull --rebase -v && git fetch --all --prune"
-alias git-last-authors='for branch in $(git branch -r | grep -v HEAD);do echo -e \[$(basename `git rev-parse --show-toplevel`)\] $branch \($(git show --format="%an | %ai %ar" $branch | head -n 1)\); done | sort -r'
