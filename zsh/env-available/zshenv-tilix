@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 
-# TILIX (Pop OS/Ubuntu terminal emulator)
+# TILIX
 #
-#
+# Tilix is an advanced GTK3 tiling terminal emulator that follows the Gnome Human Interface Guidelines.
+# https://gnunn1.github.io/tilix-web/
 
 # Work with Tilix (Linux/Ubuntu)
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
    source /etc/profile.d/vte.sh
 fi
 
 # To make Tilix Profile switching possible
-source /usr/share/tilix/scripts/tilix_int.sh
+[[ -f `which tilix` ]] && source /usr/share/tilix/scripts/tilix_int.sh
