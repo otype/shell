@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
 # Util functions to enable/disable other zsh scripts
+#
+# For Mac only!!!
 
 if [ "$SHELL" = "/usr/local/bin/zsh" ]; then
     export ZSH_ROOT=~/.zsh
