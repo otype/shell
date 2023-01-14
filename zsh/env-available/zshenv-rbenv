@@ -9,10 +9,8 @@ if [[ -d "/usr/local/var/rbenv" ]]; then
     export RBENV_ROOT=/usr/local/var/rbenv
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
     rbenv rehash
-fi
-
-# On Linux (watch out if this clashes with Mac installations)
-if [[ -d "$HOME/.rbenv" ]]; then
+elif [[ -d "$HOME/.rbenv" ]]; then
+    # On Linux (watch out if this clashes with Mac installations)
     eval "$(~/.rbenv/bin/rbenv init - --no-rehash)"
     ~/.rbenv/bin/rbenv rehash
 fi
