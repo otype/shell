@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/issues-raw/otype/shell.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub issues">
     <a href="https://github.com/otype/shell/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/otype/shell.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub pull requests">
-	<a href="https://github.com/otype/shell/LICENSE">
+	<a href="https://github.com/otype/shell/blob/main/LICENSE">
 	<img src="https://img.shields.io/github/license/otype/shell" alt="LICENSE">
 </p>
 
