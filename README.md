@@ -34,7 +34,7 @@ curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 
 ## Enable configurations
 
-[All configurations](/zsh/env-available) can be found in `~/.zsh/env-available/`.
+Once installed, all configurations can be found in `~/.zsh/env-available/`.
 
 To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` you just need to symlink the config:
 
