@@ -32,7 +32,7 @@ Via install script
 curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 ```
 
-## Configuration
+## Enable configurations
 
 All configurations can be found in `~/.zsh/env-available/`.
 
