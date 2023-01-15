@@ -34,14 +34,15 @@ curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 
 ## Configuration
 
-Enable the configuration files you need:
+All configurations can be found in `~/.zsh/env-available/`.
 
-    For example, if you want to enable the Android-SDK config `~/.zsh/env-available/zshenv-android`:
+To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` you just need to symlink the config:
 
-        cd ~/.zsh/env-enabled
-        ln -nsf ../env-available/zshenv-android
+```console
+cd ~/.zsh/env-enabled
+ln -nsf ../env-available/zshenv-android
+```
 
-
-That's it! Repeat this for any other configuration and restart your terminal session.
+Repeat this for any other configuration and restart your terminal session.
 
 _Note: Make sure to check each configuration for sanity and correct paths!_
