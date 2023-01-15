@@ -15,7 +15,7 @@
 
 Shell is a pluggable configuration for [ZSH](http://www.zsh.org/). Mainly focusing Linux-based systems (partially also Mac OS X), it provides helpful functions, aliases and PATH definitions for a variety of tools you might be using.
 
-Configurations exist for tools/SDKs like [Android SDK](https://developer.android.com/about/versions/13/setup-sdk#install-sdk), [Docker](https://www.docker.com/), [Emacs](https://www.gnu.org/software/emacs/), [Git](https://git-scm.com/), [Goenv\(https://github.com/syndbg/goenv), [powerline](https://github.com/powerline/powerline), [pyenv](https://github.com/pyenv/pyenv), [rbenv](https://github.com/rbenv/rbenv), [Rust](https://www.rust-lang.org/) and [tilix](https://gnunn1.github.io/tilix-web/).
+Configurations exist for tools/SDKs like [Android SDK](https://developer.android.com/about/versions/13/setup-sdk#install-sdk), [Docker](https://www.docker.com/), [Emacs](https://www.gnu.org/software/emacs/), [Git](https://git-scm.com/), [Goenv](https://github.com/syndbg/goenv), [powerline](https://github.com/powerline/powerline), [pyenv](https://github.com/pyenv/pyenv), [rbenv](https://github.com/rbenv/rbenv), [Rust](https://www.rust-lang.org/) and [tilix](https://gnunn1.github.io/tilix-web/).
 
 ## Installation
 
