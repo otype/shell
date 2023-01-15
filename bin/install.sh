@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 set -e
-[ -n "$PYENV_DEBUG" ] && set -x
-
 if [ -z "$SHELL_ROOT" ]; then
-  export SHELL_ROOT="${HOME}/.shell2"
+  export SHELL_ROOT="${HOME}/.shell"
 fi
 
 colorize() {
@@ -70,10 +68,10 @@ checkout "${GITHUB}otype/shell.git"            "${SHELL_ROOT}"                  
 
 # Link all ZSH configs
 echo "shell: Symlink all ZSH configurations"
-ln -nsf ${SHELL_ROOT}/zshenv ~/.zshenv2
-ln -nsf ${SHELL_ROOT}/zshrc ~/.zshrc2
-ln -nsf ${SHELL_ROOT}/zsh ~/.zsh2
-ln -nsf ${SHELL_ROOT}/zprofile ~/.zprofile2
+ln -nsf ${SHELL_ROOT}/zshenv ~/.zshenv
+ln -nsf ${SHELL_ROOT}/zshrc ~/.zshrc
+ln -nsf ${SHELL_ROOT}/zsh ~/.zsh
+ln -nsf ${SHELL_ROOT}/zprofile ~/.zprofile
 
 echo "shell: Installation finished."
 echo ""
