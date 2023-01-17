@@ -4,6 +4,18 @@
 #
 #
 
+#
+# Bind keys
+#
+
+# enable emacs mode
+bindkey -e
+
+# search forward/backward
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
+stty stop undef
+
 # History settings
 export HISTFILESIZE=100000
 export HISTSIZE=50000
