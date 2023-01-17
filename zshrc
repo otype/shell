@@ -9,7 +9,7 @@ if [[ $USER == "REDACTED" ]]; then
     ZSH_THEME="bira"
 elif [[ $USER == "hgschmidt" ]]; then
     # Beforehand, copy the otype theme:
-    # cp ./themes/otype.zsh-theme ~/.oh-my-zsh/themes/
+    # ln -nsf ./themes/otype.zsh-theme ~/.oh-my-zsh/themes/otype.zsh-theme
     ZSH_THEME="otype"
 else
     ZSH_THEME="norm"

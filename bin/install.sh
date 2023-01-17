@@ -73,6 +73,8 @@ ln -nsf ${SHELL_ROOT}/zshrc ~/.zshrc
 ln -nsf ${SHELL_ROOT}/zsh ~/.zsh
 ln -nsf ${SHELL_ROOT}/zprofile ~/.zprofile
 
+[[ -d "$HOME/.oh-my-zsh/" ]] && ln -nsf ${SHELL_ROOT}/themes/otype.zsh-theme ${HOME}/.oh-my-zsh/themes/otype.zsh-theme
+
 echo "shell: Installation finished."
 echo ""
 colorize 1 "Set your default shell to ZSH and restart your shell to activate the configurations"
