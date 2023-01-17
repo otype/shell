@@ -13,8 +13,8 @@ function pj() {
 function pjk() {
     for pid in `pj | awk '{print $1}'`
     do
-	      echo ">>> Killing [$pid]"
-	      kill -9 $pid
+	echo ">>> Killing [$pid]"
+	kill -9 $pid
     done
 }
 

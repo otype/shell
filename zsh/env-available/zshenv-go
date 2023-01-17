@@ -1,17 +1,18 @@
 #!/usr/bin/env zsh
 
-# Use on Mac OS X
-if [[ -d "/usr/local/Cellar/go" ]]; then
-    export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
-    # Enable Go111
-    export GO111MODULE=on
+if [[ $OSTYPE == 'darwin' ]]; then
+    if [[ -d "/usr/local/Cellar/go" ]]; then
+	export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
+	# Enable Go111
+	export GO111MODULE=on
 
-    export PATH="$PATH:$GOROOT/bin"
+	export PATH="$PATH:$GOROOT/bin"
 
-    # We simply put GOPATH to $HOME ... this will create:
-    #   - ~/src (exists anyway),
-    #   - ~/pkg and
-    #   - ~/bin (which actually already is part of env PATH).
-    export GOPATH=$HOME
-    export PATH="$GOPATH/bin:$PATH"
+	# We simply put GOPATH to $HOME ... this will create:
+	#   - ~/src (exists anyway),
+	#   - ~/pkg and
+	#   - ~/bin (which actually already is part of env PATH).
+	export GOPATH=$HOME
+	export PATH="$GOPATH/bin:$PATH"
+    fi
 fi
