@@ -3,8 +3,8 @@
 # ZSHENV ASDF
 #
 #
-# For Mac OS X
-[[ -d "/usr/local/opt/asdf" ]] && source /usr/local/opt/asdf/asdf.sh
-
-# For Ubuntu/Pop OS
-[[ -f "$HOME/.asdf/asdf.sh" ]] && source $HOME/.asdf/asdf.sh
+if [[ $OSTYPE == 'darwin' ]]; then
+    [[ -d "/usr/local/opt/asdf" ]] && source /usr/local/opt/asdf/asdf.sh
+elif [[ $OSTYPE == 'linux-gnu' ]]; then
+    [[ -f "$HOME/.asdf/asdf.sh" ]] && source $HOME/.asdf/asdf.sh
+fi
