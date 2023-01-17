@@ -6,11 +6,13 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 if [[ $USER == "hgschmidtmw" ]]; then
-  ZSH_THEME="bira"
+    ZSH_THEME="bira"
 elif [[ $USER == "hgschmidt" ]]; then
-  ZSH_THEME="otype"
+    # Beforehand, copy the otype theme:
+    # cp ./themes/otype.zsh-theme ~/.oh-my-zsh/themes/
+    ZSH_THEME="otype"
 else
-  ZSH_THEME="norm"
+    ZSH_THEME="norm"
 fi
 
 # Automatically upgrade oh-my-zsh without prompting you
