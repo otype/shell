@@ -14,7 +14,8 @@ bindkey -e
 # search forward/backward
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
-stty stop undef
+#stty stop undef
+#stty stop undef <$TTY >$TTY     # Disable ctrl-s to freeze terminal.
 
 # History settings
 export HISTFILESIZE=100000
