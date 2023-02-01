@@ -8,12 +8,6 @@ if [[ $OSTYPE == 'darwin' ]]; then
 	export GOENV_ROOT="$HOME/.goenv"
 	export PATH="$GOENV_ROOT/bin:$PATH"
 	eval "$(goenv init -)"
-
-	# We simply put GOPATH to $HOME ... this will create:
-	#   - ~/src (exists anyway),
-	#   - ~/pkg and
-	#   - ~/bin (which actually already is part of env PATH).
-	export GOPATH=$HOME
 	export PATH="$GOROOT/bin:$PATH"
 	export PATH="$PATH:$GOPATH/bin"
     fi
@@ -22,12 +16,6 @@ elif [[ $OSTYPE == 'linux-gnu' ]]; then
 	export GOENV_ROOT="$HOME/.goenv"
 	export PATH="$GOENV_ROOT/bin:$PATH"
 	eval "$(goenv init -)"
-
-	# We simply put GOPATH to $HOME ... this will create:
-	#   - ~/src (exists anyway),
-	#   - ~/pkg and
-	#   - ~/bin (which actually already is part of env PATH).
-	export GOPATH=$HOME
 	export PATH="$GOROOT/bin:$PATH"
 	export PATH="$PATH:$GOPATH/bin"
     fi
