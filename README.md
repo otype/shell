@@ -42,11 +42,10 @@ Configurations can be found in `~/.zsh/env-available/`.
 To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` symlink the config:
 
 ```console
-$ cd ~/.zsh/env-enabled
-$ ln -nsf ../env-available/zshenv-android
+$ cd ~/.zsh/env-enabled && ln -nsf ../env-available/zshenv-android
 ```
 
-Repeat this for any other configuration. Restart your terminal session.
+Repeat by linking any other configuration you need. Restart your terminal session.
 
 _Note: Make sure to check each configuration for sanity and correctness!_
 
