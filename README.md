@@ -33,17 +33,26 @@ Via install script
 curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 ```
 
-## Enable configurations
+## Configuration
 
-Once installed, all configurations can be found in `~/.zsh/env-available/`.
+#### Enable configurations
 
-To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` you just need to symlink the config:
+Configurations can be found in `~/.zsh/env-available/`.
+
+To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` symlink the config:
 
 ```console
 cd ~/.zsh/env-enabled
 ln -nsf ../env-available/zshenv-android
 ```
 
-Repeat this for any other configuration and restart your terminal session.
+Repeat this for any other configuration. Restart your terminal session.
 
-_Note: Make sure to check each configuration for sanity and correct paths!._
+_Note: Make sure to check each configuration for sanity and correctness!_
+
+#### Add your personal touch
+
+Modify [zshrc](zshrc):
+
+**(1) Set your [Oh My ZSH!](https://ohmyz.sh/) theme.**
+**(2) Load your desired ZSH plugins.** The list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
