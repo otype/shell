@@ -23,6 +23,7 @@ Configurations exist for tools/SDKs like [Android SDK](https://developer.android
 
 - [ZSH](http://www.zsh.org/)
 - [Oh My ZSH!](https://ohmyz.sh/)
+- [Vim](https://www.vim.org/)
 
 #### Automatic installer
 
@@ -45,4 +46,4 @@ ln -nsf ../env-available/zshenv-android
 
 Repeat this for any other configuration and restart your terminal session.
 
-_Note: Make sure to check each configuration for sanity and correct paths!_
+_Note: Make sure to check each configuration for sanity and correct paths!._

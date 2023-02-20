@@ -3,4 +3,5 @@
 # ZSHENV LUA
 #
 #
+
 [[ -d "$HOME/.luarocks/bin" ]] && export PATH="$HOME/.luarocks/bin:$PATH"

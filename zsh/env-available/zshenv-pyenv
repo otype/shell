@@ -4,7 +4,7 @@
 #
 #
 
-if [[ $OSTYPE == 'darwin' ]]; then
+if [[ `uname -s` == "Darwin" ]]; then
     if [[ -d "/usr/local/opt/pyenv" ]]; then
 	export PYENV_ROOT="/usr/local/opt/pyenv"
 	export PATH="$HOME/Library/Python/2.7/bin:$HOME/.local/bin:$PATH"

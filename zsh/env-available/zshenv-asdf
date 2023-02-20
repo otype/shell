@@ -3,6 +3,7 @@
 # ZSHENV ASDF
 #
 #
+
 if [[ $OSTYPE == 'darwin' ]]; then
     [[ -d "/usr/local/opt/asdf" ]] && source /usr/local/opt/asdf/asdf.sh
 elif [[ $OSTYPE == 'linux-gnu' ]]; then

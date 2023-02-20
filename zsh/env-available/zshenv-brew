@@ -2,6 +2,7 @@
 
 # ZSHENV HOMEBREW
 #
+# NOTE: POTENTIALLY OUTDATED!!!
 #
 
 if [[ $OSTYPE == 'darwin' ]]; then

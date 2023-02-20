@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
 
-# PYTHON
+# ZSHENV PYTHON
 #
 #
-if [[ $OSTYPE == 'darwin' ]]; then
+
+if [[ `uname -s` == "Darwin" ]]; then
     [[ -d "/usr/local/share/python" ]] && export PATH=/usr/local/share/python:$PATH
 elif [[ $OSTYPE == 'linux-gnu' ]]; then
     [[ -d "$(python -m site --user-base)/bin" ]] && export PATH="$(python -m site --user-base)/bin:$PATH"
