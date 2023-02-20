@@ -1,6 +1,6 @@
 # Shell
 
-#### A ZSH configurations via simple plugins.
+#### A ZSH setup via simple configurations.
 
 <p>
 	<a href="https://github.com/otype/shell/commits/master">
