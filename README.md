@@ -53,12 +53,12 @@ Modify [zshrc](zshrc):
 
 1. **Set your theme.** A preview of Oh My ZSH! themes can be found in the official [Themes documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
-```console
-ZSH_THEME="otype"
-```
+    ```console
+    ZSH_THEME="otype"
+    ```
 
 2. **Load your ZSH plugins.** A list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
 
-```console
-plugins=(common-aliases colored-man-pages colorize <ADD_MORE_HERE>)
-```
+    ```console
+    plugins=(common-aliases colored-man-pages colorize <ADD_MORE_HERE>)
+    ```
