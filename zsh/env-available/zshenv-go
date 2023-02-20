@@ -1,6 +1,11 @@
 #!/usr/bin/env zsh
 
-if [[ $OSTYPE == 'darwin' ]]; then
+# ZSHENV GO
+#
+# NOTE: POTENTIALLY OUTDATED!!!
+#
+
+if [[ `uname -s` == "Darwin" ]]; then
     if [[ -d "/usr/local/Cellar/go" ]]; then
 	export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
 	# Enable Go111

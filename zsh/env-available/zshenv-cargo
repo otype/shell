@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# RUST
+# ZSHENV CARGO (Rust)
 #
 #
+
 [[ -d "$HOME/.cargo" ]] && . "$HOME/.cargo/env"

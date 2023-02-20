@@ -3,7 +3,9 @@
 # ZSHENV GOENV
 #
 # goenv (https://github.com/syndbg/goenv)
-if [[ $OSTYPE == 'darwin' ]]; then
+#
+
+if [[ `uname -s` == "Darwin" ]]; then
     if [[ -f "/usr/local/bin/goenv" ]]; then
 	export GOENV_ROOT="$HOME/.goenv"
 	export PATH="$GOENV_ROOT/bin:$PATH"

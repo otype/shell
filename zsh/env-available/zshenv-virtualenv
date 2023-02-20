@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
-# PYTHON VIRTUALENV
+# ZSHENV PYTHON VIRTUALENV
 #
+# NOTE: POTENTIALLY OUTDATED!!!
 #
+
 if [[ -d "$HOME/Configurations/virtualenvs" ]]; then
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
     export WORKON_HOME=$HOME/Configurations/virtualenvs
