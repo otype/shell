@@ -6,9 +6,11 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="norm"
-[[ $USER == "hgschmidtmw" ]] && ZSH_THEME="bira"
-[[ $USER == "hgschmidt" ]] && ZSH_THEME="otype"
+if [[ $USER == "hgschmidtmw" ]]; then
+  ZSH_THEME="bira"
+else
+  ZSH_THEME="otype"
+fi
 
 # Automatically upgrade oh-my-zsh without prompting you
 DISABLE_UPDATE_PROMPT=true

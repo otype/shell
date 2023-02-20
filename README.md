@@ -35,7 +35,7 @@ curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 
 ## Post-installation steps
 
-### (1) Enable configurations
+####  Enable configurations
 
 Configurations can be found in `~/.zsh/env-available/`.
 
@@ -50,9 +50,18 @@ Repeat this for any other configuration. Restart your terminal session.
 
 _Note: Make sure to check each configuration for sanity and correctness!_
 
-### (2) Load plugins and theme
+#### Load plugins and theme
 
 Modify [zshrc](zshrc):
 
-1. **Set your [Oh My ZSH!](https://ohmyz.sh/) theme.**
+1. **Set your [Oh My ZSH!](https://ohmyz.sh/) theme.** A preview of themes can be [found here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
+
+```console
+ZSH_THEME="otype"
+```
+
 2. **Load your desired ZSH plugins.** The list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+
+```console
+plugins=(common-aliases colored-man-pages colorize <ADD_MORE_HERE>)
+```
