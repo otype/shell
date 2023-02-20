@@ -30,7 +30,7 @@ Configurations exist for tools/SDKs like [Android SDK](https://developer.android
 Via install script
 
 ```console
-curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
+$ curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 ```
 
 ## Post-installation steps
@@ -42,8 +42,8 @@ Configurations can be found in `~/.zsh/env-available/`.
 To enable e.g. the Android-SDK config `~/.zsh/env-available/zshenv-android` symlink the config:
 
 ```console
-cd ~/.zsh/env-enabled
-ln -nsf ../env-available/zshenv-android
+$ cd ~/.zsh/env-enabled
+$ ln -nsf ../env-available/zshenv-android
 ```
 
 Repeat this for any other configuration. Restart your terminal session.
