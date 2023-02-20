@@ -54,13 +54,13 @@ _Note: Make sure to check each configuration for sanity and correctness!_
 
 Modify [zshrc](zshrc):
 
-1. **Set your [Oh My ZSH!](https://ohmyz.sh/) theme.** A preview of themes can be [found here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
+1. **Set your theme.** A preview of Oh My ZSH! themes can be [found here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
 ```console
 ZSH_THEME="otype"
 ```
 
-2. **Load your desired ZSH plugins.** The list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+2. **Load your ZSH plugins.** A list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
 
 ```console
 plugins=(common-aliases colored-man-pages colorize <ADD_MORE_HERE>)
