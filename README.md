@@ -51,7 +51,7 @@ _Note: Make sure to check each configuration for sanity and correctness!_
 
 Modify [zshrc](zshrc):
 
-1. **Set your theme.** A preview of Oh My ZSH! themes can be [found here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
+1. **Set your theme.** A preview of Oh My ZSH! themes can be found in the official Oh My ZSH! [Themes documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
 ```console
 ZSH_THEME="otype"
