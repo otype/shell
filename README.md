@@ -33,9 +33,9 @@ Via install script
 curl -L https://raw.githubusercontent.com/otype/shell/main/bin/install.sh | bash
 ```
 
-## Configuration
+## Post-installation Configuration
 
-#### Enable configurations
+### Enable configurations
 
 Configurations can be found in `~/.zsh/env-available/`.
 
@@ -50,7 +50,7 @@ Repeat this for any other configuration. Restart your terminal session.
 
 _Note: Make sure to check each configuration for sanity and correctness!_
 
-#### Add your personal touch
+### Load plugins and theme
 
 Modify [zshrc](zshrc):
 
