@@ -54,5 +54,5 @@ _Note: Make sure to check each configuration for sanity and correctness!_
 
 Modify [zshrc](zshrc):
 
-**(1) Set your [Oh My ZSH!](https://ohmyz.sh/) theme.**
-**(2) Load your desired ZSH plugins.** The list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
+1. **Set your [Oh My ZSH!](https://ohmyz.sh/) theme.**
+2. **Load your desired ZSH plugins.** The list of all plugins can be found in the official [ZSH - Plugins documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins).
