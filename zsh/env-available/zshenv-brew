@@ -5,7 +5,7 @@
 # NOTE: POTENTIALLY OUTDATED!!!
 #
 
-if [[ $OSTYPE == 'darwin' ]]; then
+if [[ `uname -s` == "Darwin" ]]; then
     # Added for brew zsh-completions
     if [[ `alias | grep "^run-help"` ]]; then
 	unalias run-help
