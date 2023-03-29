@@ -5,6 +5,9 @@
 # Tilix is an advanced GTK3 tiling terminal emulator that follows the Gnome Human Interface Guidelines.
 # https://gnunn1.github.io/tilix-web/
 
+alias tilix-dump-conf="dconf dump /com/gexperts/Tilix/ > tilix.dconf"
+alias tilix-load-conf="dconf load /com/gexperts/Tilix/ < tilix.dconf"
+
 # Work with Tilix (Linux/Ubuntu)
 if [[ $TILIX_ID ]] || [[ $VTE_VERSION ]]; then
    source /etc/profile.d/vte.sh
