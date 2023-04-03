@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# ZSHENV DRONE
+#
+#
+
+# This requires a dot file `~/.drone.cfg`. The file needs to
+# contain the following configurations:
+#
+#  export DRONE_SERVER=__YOUR_DRONE_SERVER__
+#  export DRONE_TOKEN=__YOUR_DRONE_TOKEN__
+#
+. ~/.drone.cfg
