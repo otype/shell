@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+# ZSHENV GPG
+#
+#
+
+# Do not use this:
+#export GPG_TTY=$(tty)
+#
+# Read up here:
+# https://unix.stackexchange.com/questions/608842/zshrc-export-gpg-tty-tty-says-not-a-tty
+#
+# Instead, better use this:
+export GPG_TTY=$TTY
