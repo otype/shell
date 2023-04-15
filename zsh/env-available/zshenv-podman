@@ -1,0 +1,87 @@
+#!/usr/bin/env zsh
+
+# ZSHENV Podman
+#
+#
+
+# general podman commands
+alias pi="podman images"
+alias pps="podman ps"
+alias pl="podman logs"
+alias plf="podman logs -f"
+alias prm="podman rm"
+alias prmi="podman rmi"
+
+# podman-compose shortcuts
+alias pc="podman compose"
+alias pcu="podman compose up"
+alias pcud="podman compose up -d"
+alias pcd="podman compose down"
+
+# Run bash in podman container
+podman_exec_helper() {
+    podman exec -it $1 sh
+}
+alias pex=podman_exec_helper
+
+# Kill all running containers.
+function podman-killall() {
+    if [[ $(podman ps -q | wc -l) -gt 0 ]]; then
+        podman kill $(podman ps -q)
+        return 0
+    else
+        echo "\n>>> No running containers found!"
+        return 1
+    fi
+}
+
+# Delete all stopped containers.
+function podman-clean-containers() {
+    if [[ $(podman ps -aq | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting stopped containers"
+        podman rm $(podman ps -aq)
+        return 0
+    else
+        echo "\n>>> No stopped containers found!"
+        return 1
+    fi
+}
+
+# Delete all untagged images.
+function podman-clean-tangling-images() {
+    if [[ $(podman images -qf dangling=true | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting untagged images!"
+        podman rmi $(podman images -qf dangling=true)
+        return 0
+    else
+        echo "\n>>> No untagged images found!"
+        return 1
+    fi
+}
+
+# Delete ALL (!) images
+function podman-clean-all-images() {
+    if [[ $(podman images -q | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting ALL(!) images!"
+        podman rmi $(podman images -q)
+        return 0
+    else
+        echo "\n>>> No images found!"
+        return 1
+    fi
+}
+
+# Delete all tangling volumes
+function podman-clean-tangling-volumes() {
+    if [[ $(podman volume ls -qf dangling=true | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting untagged, tangling volumes!"
+        podman volume rm $(podman volume ls -qf dangling=true)
+        return 0
+    else
+        echo "\n>>> No untagged, tangling volumes found!"
+        return 1
+    fi
+}
+
+# Delete all stopped containers and untagged images.
+alias podman-clean='podman-clean-containers; podman-clean-tangling-images ; podman-clean-tangling-volumes'
