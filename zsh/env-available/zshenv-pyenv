@@ -6,16 +6,17 @@
 
 if [[ `uname -s` == "Darwin" ]]; then
     if [[ -d "/usr/local/opt/pyenv" ]]; then
-	export PYENV_ROOT="/usr/local/opt/pyenv"
-	export PATH="$HOME/Library/Python/2.7/bin:$HOME/.local/bin:$PATH"
-	if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+        export PYENV_ROOT="/usr/local/opt/pyenv"
+        export PATH="$HOME/Library/Python/2.7/bin:$HOME/.local/bin:$PATH"
+
+        if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
     fi
 elif [[ $OSTYPE == 'linux-gnu' ]]; then
     if [[ -d "$HOME/.pyenv/" ]]; then
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init --path)"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
+	      export PYENV_ROOT="$HOME/.pyenv"
+	      export PATH="$PYENV_ROOT/bin:$PATH"
+	      eval "$(pyenv init --path)"
+	      eval "$(pyenv init -)"
+	      eval "$(pyenv virtualenv-init -)"
     fi
 fi
