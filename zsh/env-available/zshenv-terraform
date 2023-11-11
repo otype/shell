@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# ZSHENV TERRAFORM
-#
-#
-
-[[ -d "/opt/Terraform/latest" ]] && export PATH="/opt/Terraform/latest:$PATH"

@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# ZSHENV HASHICORP
+#
+# Set of Hashicorp binaries incl. Packer, Terraform, Vault, etc.
+
+[[ -d "/opt/hashicorp/bin" ]] && export PATH="/opt/hashicorp/bin:$PATH"
