@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# ZHENV PMD (Java)
+#
+# https://docs.pmd-code.org/latest/pmd_userdocs_installation.html
+
+if [[ -s "/opt/pmd/latest/bin/pmd" ]]; then
+    source /opt/pmd/latest/shell/pmd-completion.sh
+    export PATH="$PATH:/opt/pmd/latest/bin"
+fi
