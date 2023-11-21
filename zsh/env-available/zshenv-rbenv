@@ -4,18 +4,10 @@
 #
 #
 
-if [[ `uname -s` == "Darwin" ]]; then
-    if [[ -d "/usr/local/var/rbenv" ]]; then
-	export RBENV_ROOT=/usr/local/var/rbenv
-	if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-	rbenv rehash
-    fi
-elif [[ $OSTYPE == 'linux-gnu' ]]; then
-    if [[ -d "$HOME/.rbenv" ]]; then
-	# On Linux (watch out if this clashes with Mac installations)
-	eval "$(~/.rbenv/bin/rbenv init - --no-rehash)"
-	~/.rbenv/bin/rbenv rehash
-    fi
+if [[ -d "$HOME/.rbenv" ]]; then
+	  # On Linux (watch out if this clashes with Mac installations)
+	  eval "$(~/.rbenv/bin/rbenv init - --no-rehash)"
+	  ~/.rbenv/bin/rbenv rehash
 fi
 
 # If you use "gem install --user <gem_name>" with the "system"-ruby version ...
