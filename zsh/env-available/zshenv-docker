@@ -14,9 +14,6 @@ alias drmi="docker rmi"
 
 # docker-compose shortcuts
 alias dc="docker compose"
-alias dcu="docker compose up"
-alias dcud="docker compose up -d"
-alias dcd="docker compose down"
 
 # Run bash in docker container
 docker_exec_helper() {
