@@ -15,7 +15,7 @@ ZSH_THEME="otype"
 DISABLE_UPDATE_PROMPT=true
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases colored-man-pages colorize dnf docker docker-compose emacs encode64 github git git-extras gh golang history pyenv python mvn rust terraform)
+plugins=(common-aliases colored-man-pages colorize dnf docker docker-compose emacs encode64 github git git-extras gh golang history kubectl pyenv python mvn rust terraform)
 
 # Set colorize style
 ZSH_COLORIZE_STYLE="colorful"
