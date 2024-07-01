@@ -5,5 +5,5 @@
 #
 
 # Aliases
-alias gpr="git pull --rebase -v"
+#alias gpr="git pull --rebase -v"
 alias gprf="git pull --rebase -v && git fetch --all --prune"
