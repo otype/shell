@@ -5,4 +5,4 @@
 #
 
 # Run powerline-daemon
-[[ -f `which powerline-daemon` ]] && powerline-daemon -q
+[[ -f $(which powerline-daemon) ]] && powerline-daemon -q

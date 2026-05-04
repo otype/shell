@@ -3,4 +3,4 @@
 # ZSHENV PYTHON
 #
 #
-[[ -d "$(python -m site --user-base)/bin" ]] && export PATH="$(python -m site --user-base)/bin:$PATH"
+[[ -d "$(python3 -m site --user-base)/bin" ]] && export PATH="$(python3 -m site --user-base)/bin:$PATH"

@@ -5,8 +5,5 @@
 #
 [[ -f "$HOME/.asdf/asdf.sh" ]] && source $HOME/.asdf/asdf.sh
 
-# append completions to fpath
+# append asdf completions to fpath (compinit is called once in zshrc)
 fpath=(${ASDF_DIR}/completions $fpath)
-
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit

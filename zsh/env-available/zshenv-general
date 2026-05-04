@@ -7,12 +7,14 @@
 # Enable Emacs mode
 bindkey -e
 
-# search forward/backward
-bindkey "^R" history-incremental-search-backward
+# Unblock ^S (normally captured for XON/XOFF flow control) so it can be used for forward history search
+stty -ixon
+
+# ^R is already the default in Emacs mode; ^S needs stty -ixon above to work
 bindkey "^S" history-incremental-search-forward
 
 # Preferred editor: emacsclient if available (this will be set in zshenv-emacs), otherwise vim.
-[[ -f `which emacsclient` ]] || export EDITOR="vim"
+[[ -f $(which emacsclient) ]] || export EDITOR="vim"
 
 # General
 alias h=history
