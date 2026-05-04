@@ -4,8 +4,7 @@
 #
 #
 
-# History settings
-export HISTFILESIZE=200000
+# History settings (HISTFILESIZE is bash-only and is ignored by zsh)
 export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTFILE=~/.zsh_history
