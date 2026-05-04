@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# Ensure to install prereqs:
+# ```
+# sudo dnf install rocm-hip rocm-hip-devel rocm-runtime rocminfo rocm-smi hipcc hipblas hipblas-devel
+#                  roc-blas-devel alsa-lib-devel
+# ```
+#
+# Once ROCM failed, switch to vulkan-sdk:
+# ```
+# sudo dnf install glslc vulkan-tools vulkan-loader-devel glslang openblas-devel webkit2gtk4.1-devel libsoup3-devel \
+#                  libappindicator-gtk3-devel
+# ```
+
+
+export ROCM_PATH=/usr
+export VULKAN_SDK=/usr
+export BLAS_INCLUDE_DIRS=/usr/include/openblas

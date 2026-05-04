@@ -5,14 +5,8 @@
 # add a bit more data (timestamp in unix epoch time and elapsed time of the command)
 setopt EXTENDED_HISTORY
 
-# share history across multiple zsh sessions
+# share history across multiple zsh sessions (implies APPEND_HISTORY and INC_APPEND_HISTORY)
 setopt SHARE_HISTORY
-
-# append to history
-setopt APPEND_HISTORY
-
-# adds commands as they are typed, not at shell exit
-setopt INC_APPEND_HISTORY
 
 # expire duplicates first
 setopt HIST_EXPIRE_DUPS_FIRST

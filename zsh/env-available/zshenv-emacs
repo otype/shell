@@ -16,7 +16,7 @@ export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
 # prevent emacs term-mode to print "4m" at the end of each command
-[[ `uname -s` == "Darwin" ]] && export TERM=xterm-256color
+[[ $(uname -s) == "Darwin" ]] && export TERM=xterm-256color
 
 # Aliases
 alias e="emacsclient -t"
