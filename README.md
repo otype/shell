@@ -1,7 +1,3 @@
-# Shell
-
-#### A ZSH setup via simple configurations.
-
 <p>
 	<a href="https://github.com/otype/shell/commits/master">
 	<img src="https://img.shields.io/github/last-commit/otype/shell.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub last commit">
@@ -12,6 +8,10 @@
 	<a href="https://github.com/otype/shell/blob/main/LICENSE">
 	<img src="https://img.shields.io/github/license/otype/shell" alt="LICENSE">
 </p>
+
+# Shell
+
+#### A ZSH setup via simple configurations.
 
 Shell is a pluggable configuration for [ZSH](http://www.zsh.org/). Mainly focusing Linux-based systems (partially also Mac OS X), it provides helpful functions, aliases and PATH definitions for a variety of tools you might be using.
 
