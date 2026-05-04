@@ -8,7 +8,7 @@
 bindkey -e
 
 # Unblock ^S (normally captured for XON/XOFF flow control) so it can be used for forward history search
-stty -ixon
+[[ -t 0 ]] && stty -ixon
 
 # ^R is already the default in Emacs mode; ^S needs stty -ixon above to work
 bindkey "^S" history-incremental-search-forward
