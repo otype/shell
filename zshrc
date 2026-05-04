@@ -17,7 +17,7 @@ DISABLE_UPDATE_PROMPT=true
 # Add wisely, as too many plugins slow down shell startup.
 # Note: z, sudo, direnv are bundled with OMZ.
 # zsh-autosuggestions + zsh-syntax-highlighting must be cloned into $ZSH_CUSTOM/plugins/.
-plugins=(common-aliases colored-man-pages colorize dnf docker docker-compose emacs encode64 github git git-extras gh golang history kubectl pyenv python mvn rust terraform z sudo direnv)
+plugins=(common-aliases colored-man-pages colorize dnf docker docker-compose emacs encode64 github git git-extras gh golang history kubectl pyenv python mvn rust terraform z sudo)
 
 # Set colorize style
 ZSH_COLORIZE_STYLE="colorful"
