@@ -25,3 +25,8 @@ alias bc="bc -l"
 
 # VI
 alias vi=vim
+
+# NO_PROXY
+# Ignored hosts lists from Gnome can be extracted with:
+# $ gsettings get org.gnome.system.proxy ignore-hosts
+NO_PROXY="localhost, 127.0.0.1/8, 0.0.0.0, ::1, maps.google.com, revolut.com, 10.200.0.0/16"
