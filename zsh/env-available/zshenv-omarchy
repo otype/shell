@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# ZHENV OMARCHY SCRIPTS
+#
+# .zshenv runs before oh-my-zsh, which would overwrite the Omarchy aliases
+# (ls, lsa, gcm, gcam, h, ...). So load them once, right before the first
+# prompt, after .zshrc has finished.
+
+_omarchy_aliases="${OMARCHY_PATH:-/usr/share/omarchy}/default/bash/aliases"
+
+if [[ -o interactive && -f "$_omarchy_aliases" ]]; then
+    _omarchy_load_aliases() {
+        source "$_omarchy_aliases"
+        add-zsh-hook -d precmd _omarchy_load_aliases
+        unfunction _omarchy_load_aliases
+    }
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd _omarchy_load_aliases
+fi
