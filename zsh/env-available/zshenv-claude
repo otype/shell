@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# ZSHENV CLAUDE (Claude Code)
+#
+# Plugin folders Claude Code loads in every session (mods under development).
+
+[[ -d "$HOME/.claude/mods/inbox-board" ]] && export CLAUDE_CODE_PLUGIN_DIRS="$HOME/.claude/mods/inbox-board"
