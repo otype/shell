@@ -17,7 +17,7 @@ DISABLE_UPDATE_PROMPT=true
 # Add wisely, as too many plugins slow down shell startup.
 # Note: z, sudo, direnv are bundled with OMZ.
 # zsh-autosuggestions + zsh-syntax-highlighting must be cloned into $ZSH_CUSTOM/plugins/.
-plugins=(colored-man-pages colorize emacs github git git-extras gh history sudo)
+plugins=(colored-man-pages colorize emacs git git-extras gh history sudo)
 
 # Set colorize style
 ZSH_COLORIZE_STYLE="colorful"
