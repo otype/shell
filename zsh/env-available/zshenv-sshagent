@@ -4,5 +4,23 @@
 #
 #
 
-# Use the systemd user ssh-agent (ssh-agent.socket) when its socket exists.
+command -v ssh-agent >/dev/null 2>&1 || return 0
+
+# Prefer the systemd user ssh-agent (ssh-agent.socket) when its socket exists.
 [[ -S "${XDG_RUNTIME_DIR}/ssh-agent.socket" ]] && export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
+# Otherwise make sure one agent runs per login session: reuse a working agent
+# (ssh-add -l exits 2 when it can't connect), start one on a fixed socket if not.
+if [[ -o interactive ]]; then
+    ssh-add -l >/dev/null 2>&1
+    if [[ $? -eq 2 ]]; then
+        _ssh_sock="${XDG_RUNTIME_DIR:-/tmp}/ssh-agent.${USER}.sock"
+        export SSH_AUTH_SOCK="${_ssh_sock}"
+        ssh-add -l >/dev/null 2>&1
+        if [[ $? -eq 2 ]]; then
+            rm -f "${_ssh_sock}"
+            ssh-agent -a "${_ssh_sock}" >/dev/null
+        fi
+        unset _ssh_sock
+    fi
+fi
