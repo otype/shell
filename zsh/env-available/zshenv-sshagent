@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+# ZSHENV SSH agent
+#
+#
+
+# Use the systemd user ssh-agent (ssh-agent.socket) when its socket exists.
+[[ -S "${XDG_RUNTIME_DIR}/ssh-agent.socket" ]] && export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
