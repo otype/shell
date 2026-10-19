@@ -5,11 +5,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Default theme (overridden below for specific accounts)
 ZSH_THEME="otype"
-
-# Use different theme for REDACTED account
-[[ $USER == "REDACTED" ]] && ZSH_THEME="bira"
 
 # Automatically upgrade oh-my-zsh without prompting you
 DISABLE_UPDATE_PROMPT=true

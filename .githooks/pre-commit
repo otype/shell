@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Reject commits that carry the work identity or work-related names (IP hygiene).
+# Enable per clone: git config core.hooksPath .githooks
+# The pattern is assembled from fragments so this file does not match itself.
+w1="melt"; w2="water"
+pattern="${w1}${w2}|hgschmidt${w1:0:1}${w2:0:1}"
+
+email=$(git config user.email)
+if [[ "$email" =~ ${w1}${w2} ]]; then
+  echo "pre-commit: user.email is the work identity ($email); use hans@otype.de" >&2
+  exit 1
+fi
+
+hits=$(git diff --cached -U0 --diff-filter=ACMR -- . ':!.githooks' | grep -E '^\+[^+]' | grep -iE "$pattern" || true)
+if [[ -n "$hits" ]]; then
+  echo "pre-commit: staged changes reference the work identity:" >&2
+  echo "$hits" >&2
+  exit 1
+fi
