@@ -4,7 +4,9 @@
 #
 #
 
-# Aliases
+# Aliases (interactive shells only)
+[[ -o interactive ]] || return 0
+
 alias gpr="git pull --rebase -v"
 alias gpt="git pull --tags"
 alias gprf="git pull --rebase -v && git fetch --all --prune"

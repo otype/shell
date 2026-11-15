@@ -11,7 +11,7 @@ A pluggable ZSH configuration ("dotfiles") repo, intended to be cloned to `~/.sh
 Load order on shell startup (standard zsh startup file order):
 
 1. **`zshenv`** — sourced for every shell. Iterates `zsh/env-enabled/*` and sources each file, then de-duplicates `$PATH`.
-2. **`zprofile`** — sourced for login shells. Sets `KEYTIMEOUT`, locale (`en_US.UTF-8`), `$PAGER`, and appends `~/bin`, `~/.local/bin`, `/opt/local/bin` to `$PATH` if they exist.
+2. **`zprofile`** — sourced for login shells. Sets `KEYTIMEOUT`, locale (`en_US.UTF-8`), `$PAGER`, and appends `~/bin` and `~/.local/bin` to `$PATH` if they exist.
 3. **`zshrc`** — sourced for interactive shells. Sets history size/file (`HISTSIZE`, `SAVEHIST`, `HISTFILE`) and adds `~/.zsh/completions` to `fpath`, both before Oh My Zsh (which runs `compinit` itself, so there is no second `compinit`). Configures Oh My Zsh (theme, plugins), sources `$ZSH/oh-my-zsh.sh`, then sources `zsh/zshoptions` (extra history options) so they override Oh My Zsh's.
 
 ### `zsh/env-available/` vs `zsh/env-enabled/`

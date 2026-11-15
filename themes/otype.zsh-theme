@@ -36,7 +36,7 @@ function node_version() {
 }
 
 function pyenv_version() {
-  if which pyenv &> /dev/null && [[ -f "setup.py" ]] || [[ -f "requirements.txt" ]]; then
+  if which pyenv &> /dev/null && { [[ -f "setup.py" ]] || [[ -f "requirements.txt" ]]; }; then
     echo "(Python:$(pyenv version 2>/dev/null | awk '{print $1}'))"
   fi
 }

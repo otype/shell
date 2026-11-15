@@ -2,16 +2,10 @@
 
 # ZSHENV PYTHON
 #
-# Put the user-level Python bin directory on PATH.
-# zshenv runs for every zsh (scripts included), so avoid starting python on
-# Linux: the user base is always ~/.local there, and asking python3 for it cost
-# ~12 ms per call. macOS keeps the lookup (~/Library/Python/<ver>).
+# Put the user-level Python bin directory (~/.local/bin on Linux) on PATH.
+# zshenv runs for every zsh (scripts included), so python3 is not started to
+# look it up: `python3 -m site --user-base` cost ~12 ms per call.
 
-if [[ $OSTYPE == darwin* ]]; then
-    command -v python3 >/dev/null 2>&1 && _py_user_bin="$(python3 -m site --user-base)/bin"
-else
-    _py_user_bin="$HOME/.local/bin"
-fi
-
-[[ -n "$_py_user_bin" && -d "$_py_user_bin" ]] && export PATH="$_py_user_bin:$PATH"
-unset _py_user_bin
+# Array assignment (not `export PATH=...`) so typeset -U path in zshenv drops a
+# duplicate of this directory that is already further back in PATH.
+[[ -d "$HOME/.local/bin" ]] && path=("$HOME/.local/bin" $path)
