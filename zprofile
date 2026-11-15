@@ -4,10 +4,7 @@
 #
 #
 
-# History settings (HISTFILESIZE is bash-only and is ignored by zsh)
-export HISTSIZE=100000
-export SAVEHIST=100000
-export HISTFILE=~/.zsh_history
+# History size/file are set in zshrc (zprofile is only read by login shells).
 export KEYTIMEOUT=1			# reduce vi-mode lag of 0.4 second delay to 0.1
 
 # General exports
