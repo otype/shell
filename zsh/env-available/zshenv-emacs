@@ -15,10 +15,8 @@ export EDITOR="emacsclient -t"
 # $VISUAL opens in GUI with non-daemon as alternate
 export VISUAL="emacsclient -c -a emacs"
 
-# prevent emacs term-mode to print "4m" at the end of each command
-[[ $(uname -s) == "Darwin" ]] && export TERM=xterm-256color
-
-# Aliases
+# Aliases (interactive shells only)
+[[ -o interactive ]] || return 0
 alias e="emacsclient -t"
 alias ec="emacsclient -c"
 alias se="SUDO_EDITOR=\"emacsclient\" sudo -e"

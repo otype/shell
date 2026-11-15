@@ -2,5 +2,10 @@
 
 # ZSHENV PYTHON
 #
-#
-[[ -d "$(python3 -m site --user-base)/bin" ]] && export PATH="$(python3 -m site --user-base)/bin:$PATH"
+# Put the user-level Python bin directory (~/.local/bin on Linux) on PATH.
+# zshenv runs for every zsh (scripts included), so python3 is not started to
+# look it up: `python3 -m site --user-base` cost ~12 ms per call.
+
+# Array assignment (not `export PATH=...`) so typeset -U path in zshenv drops a
+# duplicate of this directory that is already further back in PATH.
+[[ -d "$HOME/.local/bin" ]] && path=("$HOME/.local/bin" $path)

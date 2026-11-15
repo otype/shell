@@ -4,11 +4,14 @@
 #
 #
 
-# Source all environment configuration files.
-for config in ${HOME}/.zsh/env-enabled/*
-do
-    . ${config}
-done
+# Keep every PATH entry unique. This is zsh-native (no awk/sed subprocesses,
+# paths with spaces are safe) and the flag stays set for the whole session, so
+# entries added later (zprofile, tool installers, ...) are de-duplicated too.
+typeset -U path
 
-# Ensures all PATH entries are unique.
-export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++' | sed 's/:$//' | sed '/^$/d')
+# Source all environment configuration files. (N) = no error if the directory
+# is empty.
+for config in ${HOME}/.zsh/env-enabled/*(N)
+do
+    . "${config}"
+done

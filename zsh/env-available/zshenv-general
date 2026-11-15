@@ -4,6 +4,13 @@
 #
 #
 
+# Preferred editor: emacsclient if available (this will be set in zshenv-emacs), otherwise vim.
+(( $+commands[emacsclient] )) || export EDITOR="vim"
+
+# Everything below only matters for interactive shells (key bindings, terminal
+# settings, aliases). zshenv is read by every zsh, scripts included.
+[[ -o interactive ]] || return 0
+
 # Enable Emacs mode
 bindkey -e
 
@@ -12,9 +19,6 @@ bindkey -e
 
 # ^R is already the default in Emacs mode; ^S needs stty -ixon above to work
 bindkey "^S" history-incremental-search-forward
-
-# Preferred editor: emacsclient if available (this will be set in zshenv-emacs), otherwise vim.
-[[ -f $(which emacsclient) ]] || export EDITOR="vim"
 
 # General
 alias h=history
@@ -25,4 +29,3 @@ alias bc="bc -l"
 
 # VI
 alias vi=vim
-
